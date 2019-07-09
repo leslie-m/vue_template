@@ -4,7 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
-export default new Router({
+const routers=new Router({
   routes: [
     {
       path: '/',
@@ -45,26 +45,24 @@ export default new Router({
     },
   ]
 })
-// export default routers;
-//
+export default routers;
 // routers.beforeEach((to,from,next)=>{
-//   console.log(to.path);
-//   console.log(from.path);
+//   console.log(location);
+//   console.log(to);
 //   if(to.path=="/"){
-//       if(location.search.indexOf("news")!=-1){
-//           next({path:"/news"})
-//       }else if(location.search.indexOf("info")!=-1){
-//           next({path:"/info"})
-//       }else if(location.search.indexOf("test")!=-1){
-//         next({path:"/test"})
+//           if(location.search.indexOf("news")!=-1){
+//               next({path:"/news"})
+//           }else if(location.search.indexOf("info")!=-1){
+//               next({path:"/info"})
+//           }else if(location.search.indexOf("test")!=-1){
+//             next({path:"/test"})
+//           }else {
+//             next()
+//           }
 //       }else {
 //         next()
 //       }
-//   }else {
-//     next()
-//   }
 // })
-//
 // routers.afterEach((to,from,next)=>{
-//   console.log("tiaozhuan");
+//   console.log("跳转成功");
 // })
