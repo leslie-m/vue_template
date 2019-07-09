@@ -22,18 +22,19 @@
       }
     },
     // beforeCreate(){
-    //   console.log(2);
+    //   console.log("哈哈");
     // },
     // beforeRouteEnter(to,from,next){
-    //   // to.path="/test"
-    //   next();
-    //   console.log(1)
+    //
+    //   next({path:"/test"});
+    //   console.log("路由进入触发")
     // },
     // beforeRouteLeave(to,from,next){
-    //   next()
+    //   next();
+    //   console.log("路由离开触发");
     // },
     // beforeRouteUpdate(to,from,next){
-    //   console.log("update");
+    //   console.log("子路由进入触发");
     //   next()
     // }
   }
