@@ -8,6 +8,7 @@
       </li>
     </ul>
     <router-view></router-view>
+    <div class="box"></div>
   </div>
 </template>
 
@@ -53,7 +54,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   h1, h2 {
     font-weight: normal;
   }
@@ -67,5 +68,10 @@
   }
   a {
     color: #42b983;
+  }
+  .box{
+    width:r(200);
+    height:r(200);
+    background-color:#29b8f8;
   }
 </style>
