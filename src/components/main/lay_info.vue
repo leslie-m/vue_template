@@ -16,11 +16,14 @@
     },
     methods:{
       test(){
-        console.dir(this.$router)
+        //console.dir(this.$router)
         // this.$router.push("/test")
         // this.$router.push({path:'/test',query:{id:'443321'}})
-        this.$router.push({name:'test',params:{id:'443321'}})
+        // this.$router.push({name:'test',params:{id:'443321'}})
       }
+    },
+    mounted(){
+      // console.log(this.$global.getParam());
     }
   }
 </script>
