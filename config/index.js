@@ -3,14 +3,23 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-
+const URL="https://cnodejs.org"
 module.exports = {
   dev: {
 
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/apis': {
+        target: URL, // 需要进行代理跨域主机
+        secure: true, // 如果是https接口，需要配置这个参数
+        changeOrigin: true, //是否跨域
+        pathRewrite: {
+          '^/apis': '' //请求结束 将url里面 /apis重写成""        https://cnodejs.org/api/v1/topics
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

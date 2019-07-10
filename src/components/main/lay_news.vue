@@ -12,6 +12,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     data () {
       return {
@@ -37,6 +38,18 @@
     //   console.log("子路由进入触发");
     //   next()
     // }
+    mounted(){
+      this.$apis.getTopics().then((res)=>{
+        console.log(res);
+      })
+      this.$apis.getItem().then((res)=>{
+        console.log(res);
+      })
+      axios.all([this.$apis.getTopics(), this.$apis.getItem()])
+        .then(axios.spread(function (acct, perms) {
+          // 两个请求现在都执行完成
+        }));
+    }
   }
 </script>
 
