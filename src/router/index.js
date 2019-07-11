@@ -15,6 +15,9 @@ const routers=new Router({
         {
           path: 'info',
           name: 'info',
+          meta:{
+            keepAlive:true
+          },
           component: resolve => require(['@/components/main/lay_info'], resolve)
         },
         {

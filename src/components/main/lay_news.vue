@@ -40,9 +40,9 @@
     //   next()
     // }
     mounted(){
-      // this.$apis.getTopics().then((res)=>{
-      //   console.log(res);
-      // })
+      this.$apis.getTopics().then((res)=>{
+        console.log(res);
+      })
       // this.$apis.getItem().then((res)=>{
       //   console.log(res);
       // })
@@ -50,9 +50,9 @@
       //   .then(axios.spread(function (acct, perms) {
       //     // 两个请求现在都执行完成
       //   }));
-      this.$apis.getPhp().then((res)=>{
-        console.log(res);
-      })
+      // this.$apis.getPhp().then((res)=>{
+      //   console.log(res);
+      // })
     }
   }
 </script>

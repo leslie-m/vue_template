@@ -24,6 +24,9 @@
     },
     mounted(){
       // console.log(this.$global.getParam());
+      this.$apis.getTopics().then((res)=>{
+        console.log(res);
+      })
     }
   }
 </script>

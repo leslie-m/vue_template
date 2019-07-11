@@ -1,7 +1,11 @@
 <template>
   <div>
     <lay_head></lay_head>
-    <router-view/>
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive"/>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive"/>
+    <!--<router-view/>-->
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const baseURL = location.host.indexOf(".com") != -1 ? "" : "/apis";
-const baseURL = location.host == "127.0.0.1" ? "" : "/apis";
+const baseURL = location.host.indexOf(".com") != -1 ? "" : "/apis";
+// const baseURL = location.host == "127.0.0.1" ? "" : "/apis";
 // console.log(location);
 // https://cnodejs.org
 var instance = axios.create({
