@@ -20,6 +20,11 @@ export default {
   },
   components:{
     lay_head,
+  },
+  mounted(){
+    this.$eventHub.$on("test",(res)=>{
+      alert(res)
+    })
   }
 }
 </script>

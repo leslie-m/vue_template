@@ -24,9 +24,12 @@
     },
     mounted(){
       // console.log(this.$global.getParam());
-      this.$apis.getTopics().then((res)=>{
-        console.log(res);
-      })
+      // this.$apis.getTopics().then((res)=>{
+      //   console.log(res);
+      // })
+      // this.$eventHub.$on("test",(res)=>{
+      //   alert(res)
+      // })
     }
   }
 </script>

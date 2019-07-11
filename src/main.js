@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 // import "@/common/css/index.scss"
+import 'lib-flexible/flexible'
 import core from '@/core/core.config'
 Vue.use(core)
 

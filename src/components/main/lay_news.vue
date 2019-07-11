@@ -8,7 +8,8 @@
       </li>
     </ul>
     <router-view></router-view>
-    <div class="box"></div>
+    <!--<div class="box"></div>-->
+    <button @click="test">test</button>
   </div>
 </template>
 
@@ -40,9 +41,9 @@
     //   next()
     // }
     mounted(){
-      this.$apis.getTopics().then((res)=>{
-        console.log(res);
-      })
+      // this.$apis.getTopics().then((res)=>{
+      //   console.log(res);
+      // })
       // this.$apis.getItem().then((res)=>{
       //   console.log(res);
       // })
@@ -53,6 +54,11 @@
       // this.$apis.getPhp().then((res)=>{
       //   console.log(res);
       // })
+    },
+    methods:{
+      test(){
+        this.$eventHub.$emit('test','hahaha')
+      }
     }
   }
 </script>
