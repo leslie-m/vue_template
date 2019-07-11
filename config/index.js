@@ -3,7 +3,8 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 //http://127.0.0.1/test/#
 const path = require('path')
-const URL="https://cnodejs.org"
+// const URL="https://cnodejs.org"
+const URL='http://127.0.0.1'
 module.exports = {
   dev: {
 

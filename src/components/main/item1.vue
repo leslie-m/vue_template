@@ -8,6 +8,11 @@
       return {
 
       }
+    },
+    mounted(){
+      this.$apis.getJson().then((res)=>{
+        console.log(res);
+      })
     }
   }
 </script>

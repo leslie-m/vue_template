@@ -20,8 +20,23 @@ class Apis {
   getPhp(){
     return request({
       method:'get',
-      url:'/test/'
+      url:'/test/test.php'
     })
   }
+  getJson(){
+    return request({
+      method:'post',
+      url:'/test/json.php',
+      headers: {'Content-type': 'x-www-form-urlencoded'},
+      data:{
+        uname:'Fred',
+        upwd:'123'
+      }
+    })
+  }
+  // 是Get请求用params queryString params  不需要请求头
+  // data 传默认  fromData
+  // 设置请求头    application/x-www-form-urlencoded   Request payload
+  // $GET["xxxx"]
 }
 export default new Apis()

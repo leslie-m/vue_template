@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 // import "@/common/css/index.scss"
 import 'lib-flexible/flexible'
+import store from '@/core/store'
 import core from '@/core/core.config'
 Vue.use(core)
 
@@ -14,6 +15,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
