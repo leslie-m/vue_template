@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import apis from '@/core/api'
+import { Indicator } from 'mint-ui';
 Vue.use(Vuex);
 //理解为 组件内部  data 属性
 const state={
@@ -30,7 +31,7 @@ const actions={
     context.dispatch('test1',data)
   },
   test1(context,data){
-    console.log(data);
+    console.log(data)
   },
   getApis(context,data){
     apis.getTopics().then((res)=>{
@@ -41,6 +42,13 @@ const actions={
         // console.log(context.state.topic);
       },2000)
     })
+  },
+  test2(context,data){
+    Indicator.open('加载中...')
+    setTimeout(()=>{
+      Indicator.close();
+      context.state.isTopic=true
+    },3000)
   }
 }
 export default new Vuex.Store({

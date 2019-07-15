@@ -1,15 +1,24 @@
 <template>
   <div>info
+    <hr>
     <!--<router-link to="/test">Totest</router-link>-->
     <!--<router-link :to="{path:'/test',query:{id:'443321'}}">Totest</router-link>-->
     <!--<router-link :to="{name:'test',params:{id:'443321'}}">Totest</router-link>-->
-    <button @click="add">Add</button>
-    <button @click="test">test</button>
+    <div>
+      <h1> name:{{$store.state.name}}</h1>
+      <h1> 数量:{{$store.state.num}}</h1>
+      <h2>单价:{{$store.state.price}}</h2>
+      <h1> 总价:{{$store.getters.count}}</h1>
+      <mint_ui @click="$store.commit('add')">Add</mint_ui>
+    </div>
+    <hr>
+    <button @click="$store.dispatch('test','haha')">test</button>
+    <hr>
+    <button @click="getMockData">getMockData</button>
   </div>
 </template>
 
 <script>
-  import axios from "axios"
   import {mapActions,mapGetters,mapMutations,mapState} from "vuex"
   export default {
     data () {
@@ -18,17 +27,21 @@
       }
     },
     methods:{
-      test(){
-        //console.dir(this.$router)
-        // this.$router.push("/test")
-        // this.$router.push({path:'/test',query:{id:'443321'}})
-        // this.$router.push({name:'test',params:{id:'443321'}})
-        this.$store.dispatch("getApis")
-      },
-      add(){
-        this.$store.commit("add",)
+      // test(){
+      //   //console.dir(this.$router)
+      //   // this.$router.push("/test")
+      //   // this.$router.push({path:'/test',query:{id:'443321'}})
+      //   // this.$router.push({name:'test',params:{id:'443321'}})
+      //   this.$store.dispatch("getApis")
+      // },
+      // add(){
+      //   this.$store.commit("add",)
+      // }
+      getMockData(){
+        this.$apis.login({uname:'admin',upwd:'123456'}).then((res)=>{
+          console.log(res);
+        })
       }
-
     },
     mounted(){
       // this.num=this.$store.state.num

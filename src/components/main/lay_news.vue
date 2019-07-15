@@ -7,14 +7,26 @@
         <router-link :to="item.path" :key="index">{{item.name}}</router-link>
       </li>
     </ul>
+    <hr>
+    <div>
+      <h1> name:{{name}}</h1>
+      <h1> 数量:{{num}}</h1>
+      <h2>单价:{{price}}</h2>
+      <h1> 总价:{{count}}</h1>
+      <button @click="$store.commit('add')">Add</button>
+    </div>
+    <hr>
+    <div v-show="isTopic" style="width: 100px;height: 100px;background-color:#29b8f8"></div>
+    <button @click="test2">异步测试</button>
     <router-view></router-view>
     <!--<div class="box"></div>-->
-    <button @click="test">test</button>
+    <!--<button @click="test">test</button>-->
   </div>
 </template>
 
 <script>
-  import axios from 'axios'
+  import {mapActions,mapGetters,mapMutations,mapState} from "vuex"
+  // import axios from 'axios'
   export default {
     data () {
       return {
@@ -56,9 +68,15 @@
       // })
     },
     methods:{
-      test(){
-        this.$eventHub.$emit('test','hahaha')
-      }
+      // test(){
+      //   this.$eventHub.$emit('test','hahaha')
+      // }
+      ...mapMutations(['add']),
+      ...mapActions(['test2'])
+    },
+    computed:{
+      ...mapState(['name','price','num','isTopic']),
+      ...mapGetters(['count'])
     }
   }
 </script>

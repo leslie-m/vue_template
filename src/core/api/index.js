@@ -1,4 +1,5 @@
 import request from './http'
+import mock from  "@/mock"
 // console.dir(request)
 // import axios from "axios"
 // console.dir(axios);
@@ -32,6 +33,11 @@ class Apis {
         uname:'Fred',
         upwd:'123'
       }
+    })
+  }
+  login(data){
+    return mock.get("/login",{
+      params: data
     })
   }
   // 是Get请求用params queryString params  不需要请求头

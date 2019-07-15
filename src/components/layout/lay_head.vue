@@ -6,11 +6,11 @@
         <router-link :to="item.path">{{item.name}}</router-link>
       </li>
     </ul>
-    <div>
-      <h1> name:{{$store.state.name}}</h1>
-      <h1> 数量:{{$store.state.num}}</h1>
-      <h1> 总价:{{$store.getters.count}}</h1>
-    </div>
+    <!--<div>-->
+      <!--<h1> name:{{$store.state.name}}</h1>-->
+      <!--<h1> 数量:{{$store.state.num}}</h1>-->
+      <!--<h1> 总价:{{$store.getters.count}}</h1>-->
+    <!--</div>-->
   </div>
 </template>
 
